@@ -3,6 +3,10 @@
     "beicode": {
       "baseline": "1.0.0",
       "port-version": 0
+    },
+    "basic": {
+      "baseline": "1.0.0",
+      "port-version": 0
     }
   }
 }

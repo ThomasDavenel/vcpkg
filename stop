@@ -1,0 +1,74 @@
+[33mcommit 8899924cd96647bf0d775e6368ce069eb6b2af66[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: thomas.davenel <thomas.davenel@scalian.com>
+Date:   Thu Jan 20 15:34:28 2022 +0100
+
+    [beicode] new port
+
+[1mdiff --git a/ports/beicode/portfile.cmake b/ports/beicode/portfile.cmake[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c03dfab[m
+[1m--- /dev/null[m
+[1m+++ b/ports/beicode/portfile.cmake[m
+[36m@@ -0,0 +1,21 @@[m
+[32m+[m[32mvcpkg_from_github([m
+[32m+[m[32m  OUT_SOURCE_PATH SOURCE_PATH[m
+[32m+[m[32m  REPO northwindtraders/beicode[m
+[32m+[m[32m  REF 19a1f95c2f56a27ced90227b5e2754a602a08e69[m
+[32m+[m[32m  SHA512 7b2bb7acb2a8ff07bff59cfa27247a7b2cced03828919cd65cc0c8cf1f724f5f1e947ed6992dcdbc913fb470694a52613d1861eaaadbf8903e94eb9cdfe4d000[m
+[32m+[m[32m  HEAD_REF main[m
+[32m+[m[32m)[m
+[32m+[m
+[32m+[m[32mvcpkg_configure_cmake([m
+[32m+[m[32m  SOURCE_PATH "${SOURCE_PATH}"[m
+[32m+[m[32m  PREFER_NINJA[m
+[32m+[m[32m)[m
+[32m+[m[32mvcpkg_install_cmake()[m
+[32m+[m[32mvcpkg_fixup_cmake_targets()[m
+[32m+[m
+[32m+[m[32mfile(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")[m
+[32m+[m
+[32m+[m[32mfile([m
+[32m+[m[32m  INSTALL "${SOURCE_PATH}/LICENSE"[m
+[32m+[m[32m  DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}"[m
+[32m+[m[32m  RENAME copyright)[m
+\ No newline at end of file[m
+[1mdiff --git a/ports/beicode/vcpkg.json b/ports/beicode/vcpkg.json[m
+[1mnew file mode 100644[m
+[1mindex 0000000..bb2a837[m
+[1m--- /dev/null[m
+[1m+++ b/ports/beicode/vcpkg.json[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m{[m
+[32m+[m	[32m"name": "beicode",[m
+[32m+[m	[32m"version": "1.0.0",[m
+[32m+[m	[32m"description": "A simple utf-8 based unicode decoding and encoding library",[m
+[32m+[m	[32m"homepage": "https://github.com/northwindtraders/beicode"[m
+[32m+[m[32m}[m
+[1mdiff --git a/versions/b-/beicode.json b/versions/b-/beicode.json[m
+[1mnew file mode 100644[m
+[1mindex 0000000..0b14956[m
+[1m--- /dev/null[m
+[1m+++ b/versions/b-/beicode.json[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32m{[m
+[32m+[m	[32m"versions": [[m
+[32m+[m		[32m{[m
+[32m+[m			[32m"version": "1.0.0",[m
+[32m+[m			[32m"git-tree": "1f45a8cfa03c3f162e52a15ff7edfb7dd5b4ed2c"[m
+[32m+[m		[32m}[m
+[32m+[m	[32m][m
+[32m+[m[32m}[m
+[1mdiff --git a/versions/baseline.json b/versions/baseline.json[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3b6ba8a[m
+[1m--- /dev/null[m
+[1m+++ b/versions/baseline.json[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32m{[m
+[32m+[m[32m  "default": {[m
+[32m+[m[32m    "beicode": {[m
+[32m+[m[32m      "baseline": "1.0.0",[m
+[32m+[m[32m      "port-version": 0[m
+[32m+[m[32m    }[m
+[32m+[m[32m  }[m
+[32m+[m[32m}[m
