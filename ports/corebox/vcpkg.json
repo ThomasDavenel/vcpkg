@@ -1,0 +1,9 @@
+{
+	"name": "corebox",
+	"version": "1.0.0",
+	"description": "Scalian CoreBox library",
+	"homepage": "https://github.com/ThomasDavenel/CoreBox",
+	"dependencies": [
+		"qt5"
+	]
+}

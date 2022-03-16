@@ -1,10 +1,13 @@
 vcpkg_from_github(
   OUT_SOURCE_PATH SOURCE_PATH
   REPO ThomasDavenel/basic
-  REF 1508f6880c4f3eb73719342a4f200526651796a6
-  SHA512 1e222bd36e4b9184fe9787537c76cd0ddc64f4c7d71e708661442948927dfea593e180a77a29ddbca365e9c3d8fa76cd6b9ddd6e114080d8accbecd407ede8d3
+  REF a8fdaa7a13aaa7c1bceca49342f34dcf4490e56c
+  SHA512 6bee10ebf3a8f2b6fd74e19489af08a996fb394e550c4e5c5dc64596ec2ee917104778c171adcc49121e4e98845c892007c04bcb6da7baf724879827cbf2a211
   HEAD_REF main
 )
+
+SET(VCPKG_POLICY_DLLS_WITHOUT_LIBS enabled)
+SET(VCPKG_POLICY_DLLS_WITHOUT_EXPORTS enabled)
 
 vcpkg_configure_cmake(
   SOURCE_PATH "${SOURCE_PATH}"
@@ -13,4 +16,8 @@ vcpkg_configure_cmake(
 vcpkg_install_cmake()
 vcpkg_fixup_cmake_targets()
 
-file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
+file(REMOVE_RECURSE 
+	"${CURRENT_PACKAGES_DIR}/debug/include" 
+	"${CURRENT_PACKAGES_DIR}/debug/lib" 
+	"${CURRENT_PACKAGES_DIR}/lib"
+	)
