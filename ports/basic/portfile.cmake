@@ -1,8 +1,8 @@
 vcpkg_from_github(
   OUT_SOURCE_PATH SOURCE_PATH
   REPO ThomasDavenel/basic
-  REF f230688c9e0561188d8510ac46d506089f2282d7
-  SHA512 c0032338796e45a49637fbbd8212f1837de9cfcfc1a9d7e384bca21bf548a3291945c325a139b942cbfe9433c057c2576ad6a844ac7ecac1d60a87a772625222
+  REF feb8e4e7d879e57863b75724b5f9982915ebbfbf
+  SHA512 e1f44b79ba1aaec68a2e102eb0859de92c62752036bfca580bbdd21753cb97a286493b98b01860b8407e796ab6450d04694df4a806be6952094d1983c7d09c65
   HEAD_REF main
 )
 
@@ -11,9 +11,6 @@ vcpkg_configure_cmake(
 	PREFER_NINJA
 )
 vcpkg_install_cmake()
-vcpkg_fixup_cmake_targets()
-
-file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
 
 file(
 	INSTALL "${SOURCE_PATH}/LICENSE"
