@@ -11,6 +11,10 @@ vcpkg_configure_cmake(
 	PREFER_NINJA
 )
 vcpkg_install_cmake()
+vcpkg_copy_pdbs()
+
+vcpkg_cmake_config_fixup()
+
 
 file(
 	INSTALL "${SOURCE_PATH}/LICENSE"
