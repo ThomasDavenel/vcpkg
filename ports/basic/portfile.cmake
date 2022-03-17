@@ -1,8 +1,8 @@
 vcpkg_from_github(
   OUT_SOURCE_PATH SOURCE_PATH
   REPO ThomasDavenel/basic
-  REF feb8e4e7d879e57863b75724b5f9982915ebbfbf
-  SHA512 e1f44b79ba1aaec68a2e102eb0859de92c62752036bfca580bbdd21753cb97a286493b98b01860b8407e796ab6450d04694df4a806be6952094d1983c7d09c65
+  REF 6b6e550f797ac188aaebf82b72d2d0c038163f8c
+  SHA512 599b6a37558e802fe38d81674c59f4e85ed7067942c3d29fe1f96de92148635b5a624730c6495c1d46e8be2178b8ac7b88ef087f42c3bd2ea2de4ac4af90ea44
   HEAD_REF main
 )
 
@@ -12,8 +12,6 @@ vcpkg_configure_cmake(
 )
 vcpkg_install_cmake()
 vcpkg_copy_pdbs()
-
-vcpkg_cmake_config_fixup()
 
 
 file(
